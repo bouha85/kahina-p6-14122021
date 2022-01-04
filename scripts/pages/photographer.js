@@ -4,7 +4,7 @@ const photographerId = urlParams.get('photographerId');
 console.log(photographerId);
 const photographerMediaTag = document.getElementById('photographer-media');
 
-fetch('../../data/photographers.json')
+fetch('././data/photographers.json')
     .then(response => response.json())
     .then(data => {
         let media = data.media.filter(media => media.photographerId == photographerId)
@@ -13,7 +13,7 @@ fetch('../../data/photographers.json')
               <li>
                     <figure>
                         <a href="Sample_Photos/Mimi/Animals_Rainbow.jpg">
-                            <img src="Sample_Photos/${medium.image}" alt="Arc-en-cie">
+                            <img src="Sample_Photos/${medium.image}" alt="${ medium.title }">
                         </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>
