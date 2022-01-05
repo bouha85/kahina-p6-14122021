@@ -21,7 +21,7 @@ window.onload = () => {
         lightbox.classList.remove("show");
     })
 }
-const images = document.querySelectorAll('#media a img');
+const images = document.querySelectorAll('media.photographerId');
 console.log(images);
 const next = document.getElementById("#next");
 const prev = document.getElementById("#prev");
