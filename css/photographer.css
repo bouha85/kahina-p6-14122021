@@ -18,7 +18,7 @@ body {
     margin-top: 100px;
 }
 
-.photograph-header {
+#photograph-header {
     background-color: #FAFAFA;
     height: 200px;
     margin: 0 100px;
@@ -27,7 +27,7 @@ body {
     align-items: center;
     
 }
-.photograph-header h2{
+#photograph-header h2{
     color: #D3573C;
     font-size: 36px;
     margin-block-start: 0;
@@ -177,6 +177,11 @@ figcaption h4 {
 }
 figcaption i {
     color: #901C1C;
+}
+
+button {
+    border: none;
+    background-color: white;
 }
 
 .badge {
