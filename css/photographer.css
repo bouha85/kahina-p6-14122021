@@ -86,10 +86,10 @@ body {
 
 .modal header h2 {
     color: #3b3a3a;
-    font-size: 64px;
+    font-size: 56px;
     font-weight: normal;
     text-align: start;
-    margin-bottom: 50px;
+    margin-bottom: 8rem;
     padding-top: 75px;
     line-height: 100%;
 }
