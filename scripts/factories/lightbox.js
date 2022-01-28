@@ -23,15 +23,22 @@ window.onload = () => {
         lightbox.classList.remove("show");
     })
 }
-const images = document.querySelectorAll('#photographer-media a img');
+const images = document.querySelectorAll(".portfolio-pics a");;
 console.log(images);
 // const photographerMediaTag = document.getElementById('photographer-media')
 const next = document.getElementById("#next");
 const prev = document.getElementById("#prev");
+
+
+
+
+
 let imageActive = 0;
+console.log(photographerMediaTag);
 photographerMediaTag[imageActive].classList.add('show');
 
-// clique sur le button suivant
+
+//  clique sur le button suivant
 next.addEventListener("click", function() {
     photographerMediaTag[imageActive].classList.remove('show');
     photographerMediaTag[imageActive].classList.add('hidden');
@@ -41,6 +48,4 @@ next.addEventListener("click", function() {
     }
     photographerMediaTag[imageActive].classList.remove('hidden');
     photographerMediaTag[imageActive].classList.add('show');
-
-
 })

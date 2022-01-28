@@ -38,11 +38,11 @@ fetch('././data/photographers.json')
         for (const medium of media) {
             if (medium.video != undefined) { // si le media est une vidéo
                 photographerMediaTag.innerHTML += `
-              <li>
+              <li class="portfolio-pics">
                     <figure>
                         <a class="video" href="Sample_Photos/${medium.video}">
                           <video src="Sample_Photos/${medium.video}" controls></video>
-                        </a>
+                          </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>
                             <button class="btn_like">${ medium.likes } <i class="fas fa-heart"></i></button>
@@ -52,7 +52,7 @@ fetch('././data/photographers.json')
             `
             } else { // si le média est une image
                 photographerMediaTag.innerHTML += `
-              <li>
+              <li class="portfolio-pics">
                     <figure>
                         <a class="images" href="Sample_Photos/${medium.image}">
                             <img src="Sample_Photos/${medium.image}" alt="${ medium.title }">
