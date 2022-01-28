@@ -213,9 +213,9 @@ button {
     overflow: auto;
   }
 
-  .show {
+  /* .show {
     display: initial;  
-  }
+  } */
 
 #prev,
 #next {
@@ -268,10 +268,10 @@ button {
     overflow: hidden;
   }
 
-.hiddenImage {
+.hidden {
     display: none;
 }
-.showImage{
+.show{
     display: block;
 }
 

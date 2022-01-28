@@ -2,6 +2,7 @@ function photographerFactory(data) {
     const { id, name, city, country, tagline, price, portrait,likes } = data;
 
     const picture = `Sample_Photos/Photographers ID photos/${portrait}`;
+    console.log(picture);
 
     function getUserCardDOM() {
         const article = document.createElement('article');
