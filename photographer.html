@@ -19,15 +19,53 @@
         <section id="photograph-header">
            
         </section>
+        <div class="sort-menu">
+            <span class="close-menu">Trier par</span>
+            <div id="dropMenu" class="sort-content">
+              <button class="dropbtn">^</button>
+              <div id="photographer_likes">
+                <a href="#">
+                  <button
+                    class="sort-popularity"
+                    role="button"
+                    aria-label="filter by popularity"
+                    aria-haspopup="listbox"
+                  >
+                    Popularité
+                  </button>
+                </a>
+              </div>
+              <a href="#"
+                ><button
+                  class="sort-date"
+                  role="button"
+                  aria-label="filter by date"
+                  aria-haspopup="listbox"
+                >
+                  Date
+                </button></a
+              >
+              <a href="#"
+                ><button
+                  class="sort-title"
+                  role="button"
+                  aria-label="filter by title"
+                  aria-haspopup="listbox"
+                >
+                  Titre
+                </button></a
+              >
+            </div>
+          </div>
 
-        <div id="filtreSelect">
+        <!-- <div id="filtreSelect">
             <span class="spanTrie">Trier par</span>
             <select name="" id="">
           <option  value="">Popularité</option>
           <option  value="">Date</option>
           <option  value="">Titre</option>
         </select>
-        </div>
+        </div> -->
 
         <!-- Média du photographe -->
         <section id="media">
@@ -40,7 +78,7 @@
     </main>
     <!-- Modal contact -->
     <div id="contact_modal">
-        <div class="modal">
+        <div class="modal"  id="formValid">
             <header>
                 <!-- <h2>Contactez-moi <br> Mini keel</h2> -->
                 <!-- <img src="assets/icons/close.svg" onclick="closeModal()" /> -->
@@ -50,17 +88,28 @@
             name="contact"
             action="index.html"
             method="get">
-                
+            <div id="divPrenom">  </div>
                     <label for="prénom">Prénom</label>
-                    <input type="text" name="prénom" id="prénom" aria-label="Renseignez votre prénom" aria-describedby="prénom" minlength="3" aria-required="true" required>
+                    <input type="text" name="prénom" id="prenom" aria-label="Renseignez votre prénom" aria-describedby="prénom" minlength="3" aria-required="true" required>
+                    <span id="spanPrenom"></span>
+                    <div id="divnom">         
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" aria-label="Renseignez votre nom" aria-describedby="nom" minlength="3" aria-required="true" required>
+                    <span id="spanNom"></span>
+                  </div>        
+                    <div id="divemail">       
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" aria-label="Renseignez votre email" aria-describedby="email" aria-required="true" required>
+                    <span id="spanEmail"></span>
+                  </div> 
+                    <div id="divmessage">        
                     <label for="message">Votre message</label>
                     <textarea name="message" id="message" cols="30" rows="10" minlength="25" maxlength="255" aria-label="Renseignez votre message" aria-describedby="message" aria-required="true" required></textarea>
+                    <span id="spanMsg"></span>
+                  </div>       
+                    <button class="contact_button" id="btn-submit">Envoyer</button>
                 </div>
-                <button class="contact_button">Envoyer</button>
+                
             </form>
         </div>
     </div>
