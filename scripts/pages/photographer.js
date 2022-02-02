@@ -35,37 +35,7 @@ fetch('././data/photographers.json')
     };
 
     function showPhotographerMedia(media){
-        for (const medium of media) {
-            if (medium.video != undefined) { // si le media est une vidéo
-                photographerMediaTag.innerHTML += `
-              <li class="portfolio-pics">
-                    <figure>
-                        <a class="video" href="Sample_Photos/${medium.video}">
-                          <video src="Sample_Photos/${medium.video}" controls></video>
-                          </a>
-                        <figcaption>
-                            <h4>${ medium.title }</h4>
-                            <button class="btn_like">${ medium.likes } <i class="fas fa-heart"></i></button>
-                        </figcaption>
-                    </figure>
-                </li>
-            `
-            } else { // si le média est une image
-                photographerMediaTag.innerHTML += `
-              <li class="portfolio-pics">
-                    <figure>
-                        <a class="images" href="Sample_Photos/${medium.image}">
-                            <img src="Sample_Photos/${medium.image}" alt="${ medium.title }">
-                        </a>
-                        <figcaption>
-                            <h4>${ medium.title }</h4>
-                            <button class="btn_like">${ medium.likes } <i class="fas fa-heart"></i></button>
-                        </figcaption>
-                    </figure>
-                </li>
-            `
-            }
-        }    
+        media.forEach(medium => MediaFactory.render(photographerMediaTag, medium));
     };
 
     function showHeaderModal(photographer){

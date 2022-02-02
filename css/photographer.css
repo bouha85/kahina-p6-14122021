@@ -129,7 +129,7 @@ form textarea {
 
 span {
     color: red;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 10px;
     text-align: start;
@@ -157,71 +157,12 @@ span {
   }
   /* hidden par default*/
   
-  .sort-menu {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .sort-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    margin-left: 7em;
-    background-color: #901c1c;
-    min-width: 160px;
-    z-index: 1;
-  }
-  .sort-popularity,
-  .sort-date,
-  .sort-title {
-    width: 90%;
-    background-color: #901c1c;
-    padding: 10px 10px;
-    color: #ffffff;
-    display: block;
-    margin: 6px;
-    border: none;
-    border-bottom: solid 2px #ffffff;
-    cursor: pointer;
-  }
-  .dropbtn {
-    padding: 0;
-    left: 54%;
-    margin-top: 15px;
-    max-width: 3px;
-    max-height: 3px;
-  }
-  
-  .sort-content a:hover {
-    background-color: #ddd;
-  }
-  .close-menu {
-    margin-left: 30px;
-    color: #000000;
-    cursor: pointer;
-  }
 
   
-
-/* #filtreSelect {
-    display: flex;
-    width: 200px;
-    margin-left: 100px;
-    margin-top: 50px;
-    margin-bottom: -50px;
-}
-
-#filtreSelect select {
-    width: 55%;
-    padding: 11px 0px 6px 11px;
-    margin-left: 14px;
-    border-radius: 5px 5px 5px 5px;
-    border: none;
-    background-color: #901C1C;
-    color: white;
-} */
-
   
+ 
+  
+
   #media ul {
     max-width: 1400px;
     display: grid;
