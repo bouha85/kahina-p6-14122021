@@ -20,7 +20,24 @@
            
         </section>
                  
-           
+        <section class="sorting" aria-label="Tri de la galerie">
+          <label for="sorting_input">Trier par</label>
+          <div class="sorting_wrapper">
+              <input type="checkbox" id="sorting_input" class="sorting_input" aria-label="Choix de l'option de tri" />
+              <label for="sorting_input" class="sorting_button">
+                  <span class="sorting_button_text">Popularité</span>
+                  <span class="sorting_button_icon"></span>
+              </label>
+              <div class="sorting_menu" role="listbox" aria-expanded="false">
+                  <ul class="sorting_menu_list">
+                      <li><a class="sorting_menu_list_choice" id="popularity" role="option">Popularité</a></li>
+                      <li><a class="sorting_menu_list_choice" id="date" role="option">Date</a></li>
+                      <li><a class="sorting_menu_list_choice" id="title" role="option">Titre</a></li>
+                  </ul>
+              </div>
+          </div>
+  
+      </section>   
         
 
         <!-- Média du photographe -->
