@@ -43,12 +43,28 @@ fetch('././data/photographers.json')
         headerModal.innerHTML += `<h2>Contactez-moi <br> ${photographer.name} </h2>
               <img src="assets/icons/close.svg" onclick="closeModal()" />`
     }
+    //get medias
+    const getMedias = (medias) => { //recover general media 
+      
+        medias
+          .map((tag, media) => {
+            let m = new MediaFactory(tag, media);
+            return m.static();
+          })
+      
+    };
 
     //addEvent pour likes
     let counterPlus = document.querySelectorAll('.btn-like');
     console.log(counterPlus);
     //add likes and display total on sorted images
     counterPlus.forEach((btn) => btn.addEventListener("click", sortCounter));
+    //get by method to recover info on likes and price
+    let totalLikes = data.medias
+  .map((m) => m.likes)
+  .reduce((total, value) => total + value);
+document.getElementById("total-likes").innerHTML = totalLikes;
+document.getElementById("prix").innerHTML = data.photographer.price;
     function sortCounter(e) {
       let numberOfLikes = e.currentTarget //target text number of likes
         .closest(".likes")
@@ -74,27 +90,7 @@ fetch('././data/photographers.json')
 
 
 
-//     const convertStringToHTML = (innerHTML) => {
-//         const div = document.createElement("div");  //create inner divs
-//         div.innerHTML = innerHTML;
-//         //profile fragments (container)
-//         const fragment = document.createDocumentFragment();
-//         Array.from(div.children).forEach((child) => fragment.appendChild(child));
-//         return fragment;
-//       };
-
-//        const getMedias = (medias) => { //recover general media and display
-//         return convertStringToHTML(
-//           medias
-//             .map((tag, medium) => {
-//               let m = new MediaFactory(tag, medium);
-//               return m.static();
-//             })
-//             .join("")
-//         );
-//       };
-      
-//       //create inner divs
+//     
     
 
 // //ajout un event listener sur les boutons

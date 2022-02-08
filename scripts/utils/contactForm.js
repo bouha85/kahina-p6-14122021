@@ -18,8 +18,8 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 
 // contenu des erreurs
-const erreurPrenom ='Veuillez entrer 3 caractères ou plus pour le champ du prénom ';
-const erreurNom = 'Veuillez entrer 3 caractères ou plus pour le champ du nom ';
+const erreurPrenom ='Veuillez entrer 2 caractères ou plus pour le champ du prénom ';
+const erreurNom = 'Veuillez entrer 2 caractères ou plus pour le champ du nom ';
 const erreurEmail = ' Veuilez entrer une adresse email valide';
 const erreurMsg = 'Vous devez entrer votre message';
 
