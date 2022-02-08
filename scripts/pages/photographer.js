@@ -37,20 +37,97 @@ fetch('././data/photographers.json')
     function showPhotographerMedia(media){
         media.forEach(medium => MediaFactory.render(photographerMediaTag, medium));
     };
+  
 
     function showHeaderModal(photographer){
         headerModal.innerHTML += `<h2>Contactez-moi <br> ${photographer.name} </h2>
               <img src="assets/icons/close.svg" onclick="closeModal()" />`
     }
-    // let compteur = 0;
-    // const btnLike = document.getElementsByClassName('btn_like')
-    // console.log(btnLike);
-    // btnLike.addEventListener('click', function(){
-    //     add()
-    // });
-    // function add(){
-    //      compteur += 1;
-    //      console.log(compteur, 'compteur après incrimentation');
-    // }
-    // add()
+
+    //addEvent pour likes
+    let counterPlus = document.querySelectorAll('.btn-like');
+    console.log(counterPlus);
+    //add likes and display total on sorted images
+    counterPlus.forEach((btn) => btn.addEventListener("click", sortCounter));
+    function sortCounter(e) {
+      let numberOfLikes = e.currentTarget //target text number of likes
+        .closest(".likes")
+      numberOfLikes.innerHTML = parseInt(numberOfLikes.innerHTML) + 1; //modify by adding 1
+      document.getElementById("total-likes").innerHTML = ++totalLikes; //modify total likes by adding 1
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     const convertStringToHTML = (innerHTML) => {
+//         const div = document.createElement("div");  //create inner divs
+//         div.innerHTML = innerHTML;
+//         //profile fragments (container)
+//         const fragment = document.createDocumentFragment();
+//         Array.from(div.children).forEach((child) => fragment.appendChild(child));
+//         return fragment;
+//       };
+
+//        const getMedias = (medias) => { //recover general media and display
+//         return convertStringToHTML(
+//           medias
+//             .map((tag, medium) => {
+//               let m = new MediaFactory(tag, medium);
+//               return m.static();
+//             })
+//             .join("")
+//         );
+//       };
+      
+//       //create inner divs
+    
+
+// //ajout un event listener sur les boutons
+
+
+// const byPupularite = document.querySelector('#popularity');
+// const byDate = document.querySelector('#date');
+// const byTitle = document.querySelector('#title');
+// const btnFiltre = document.querySelector('.sorting_menu_list_choice')
+// let count = 0;
+// // function sorted(filter, btnFiltre) {
+// //    btnFiltre.addEventListener("click", () => {
+// //         document.querySelector("#photographer-media").innerHTML = ""; // Vider le contenu du #portfolio
+// //         // if (filter === "likes") {
+// //         //   data.media.sort((a, b) => (a.likes > b.likes ? -1 : 1));
+// //         // }
+// //         // if (filter === "title") {
+// //         //   data.media.sort();
+// //         // }
+// //         // if (filter === "date") {
+// //         //     data.media.sort((a, b) => (a.date > b.date ? 1 : -1));
+// //         // }
+
+// // }
+// // }
+   
+
+
+
+   
+
+    
+
+
+
 

@@ -1,6 +1,9 @@
 body {
     position: relative;
 }
+i{
+    cursor: pointer;
+}
 
 #contact_modal {
     display:none;
@@ -146,6 +149,7 @@ span {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-left: 3em;
   }
   .sorting label {
     color: #000000;
@@ -197,7 +201,6 @@ span {
     transform: translate(0, 0) rotate(45deg);
   }
   .sorting_menu {
-      /* display: none; */
     width: 160px;
     overflow: hidden;
     position: absolute;
@@ -234,13 +237,13 @@ span {
   .sorting_menu li:not(:last-child) {
     border-bottom: 1px solid #FFFFFF;
   }
-  .sorting_menu li > a:hover {
+  /* .sorting_menu li > a:hover {
     background: #D3573C;
-  }
-  
-  /* .sorting_input:checked ~ .sorting_menu {
-    z-index: 1;
   } */
+  
+  .sorting_input:checked ~ .sorting_menu {
+    z-index: 1;
+  }
   
   .sorting_input:checked ~ .sorting_menu ul {
     transform: translateY(0);
