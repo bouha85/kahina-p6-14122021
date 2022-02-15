@@ -44,8 +44,6 @@
         <section id="media">
             <ul id="photographer-media"></ul>
             <footer class="badge">
-                <p id ="total-likes"><i class="fas fa-heart"></i></p>
-                <p id= "prix"></p>€/jours
             </footer>
         </section>
     </main>
@@ -87,23 +85,26 @@
         </div>
     </div>
     <!-- Modal lightbox média -->
-    <div id="portfolio"></div>
+    
     <div class="lightbox" id="lightbox">
         <img class="lightbox-close" src="assets/icons/close.svg" onclick="closeModal()" />
 
-
+        <div class="nav-arrow">
+            <button id="prev" class="fas fa-chevron-left"></button>
+            <button id="next" class="fas fa-chevron-right"></button>
+        </div>
+        <div class="lightbox-container">
+            <div class="lightbox-image" aria-label="Image ou vidéo"></div>
+                <h2 class="lightbox-text" aria-label="Titre de l'image ou de la vidéo"></h2>
+            </div>
+        </div>
         
         </div>
-    
-    <!-- <div class="badge">
-        <p> 297 081 <i class="fas fa-heart"></i></p>
-        <p>300€/jours</p>
-    </div> -->
     <script src="scripts/factories/media-factory.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>  
    
-    <script src="scripts/factories/lightbox.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
 
 </body>
 

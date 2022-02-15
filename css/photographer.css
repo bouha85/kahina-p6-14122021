@@ -312,6 +312,14 @@ button {
     bottom: 0;
     right: 115px;
 }
+.portfolio-likes, #total-likes, #prix{
+  color: initial;
+}
+.healtTotal{
+  margin-top: 12px;
+  margin-left: -60px;
+  font-size: smaller;
+}
 
  /*....... la lightbox...... */ 
 

@@ -8,6 +8,7 @@ const getPhotographerBio = document.getElementById('photograph-header');
 console.log(getPhotographerBio);
 const headerModal = document.querySelector('.modal header');
 console.log(headerModal);
+const badge = document.querySelector('.badge');
 
 
 fetch('././data/photographers.json')
@@ -18,6 +19,13 @@ fetch('././data/photographers.json')
         showPhotographerDetails(photographer);
         showHeaderModal(photographer);
         showPhotographerMedia(media);
+        showPricePhotographer(photographer);
+        showTotalLikes(media);
+        // showFilter(filter, media)
+        sorted(filter, btnFiltre)
+        
+
+        
     })
     .catch(error => console.log(error));
 
@@ -37,87 +45,75 @@ fetch('././data/photographers.json')
     function showPhotographerMedia(media){
         media.forEach(medium => MediaFactory.render(photographerMediaTag, medium));
     };
+     
   
 
     function showHeaderModal(photographer){
         headerModal.innerHTML += `<h2>Contactez-moi <br> ${photographer.name} </h2>
               <img src="assets/icons/close.svg" onclick="closeModal()" />`
     }
-    //get medias
-    const getMedias = (medias) => { //recover general media 
-      
-        medias
-          .map((tag, media) => {
-            let m = new MediaFactory(tag, media);
-            return m.static();
-          })
-      
-    };
 
+    function showPricePhotographer(photographer){
+        badge.innerHTML += `<span id="total-likes" aria-label="Total image likes">
+        </span
+     ><i class="fas fa-heart healtTotal"></i> <span id="prix" aria-label="Photographer daily price"></span>${photographer.price} €/jour`
+    }
+    
+
+function showTotalLikes(media) {
     //addEvent pour likes
+    console.log(media);
     let counterPlus = document.querySelectorAll('.btn-like');
     console.log(counterPlus);
     //add likes and display total on sorted images
-    counterPlus.forEach((btn) => btn.addEventListener("click", sortCounter));
-    //get by method to recover info on likes and price
-    let totalLikes = data.medias
-  .map((m) => m.likes)
-  .reduce((total, value) => total + value);
-document.getElementById("total-likes").innerHTML = totalLikes;
-document.getElementById("prix").innerHTML = data.photographer.price;
-    function sortCounter(e) {
-      let numberOfLikes = e.currentTarget //target text number of likes
+    let totalLikes = media
+        .map((m) => m.likes)
+        .reduce((total, value) => total + value);
+    console.log(totalLikes);
+    document.getElementById("total-likes").innerHTML = totalLikes;
+
+    counterPlus.forEach((btn) => btn.addEventListener("click", function(e) {
+        let numberOfLikes = e.currentTarget
         .closest(".likes")
-      numberOfLikes.innerHTML = parseInt(numberOfLikes.innerHTML) + 1; //modify by adding 1
-      document.getElementById("total-likes").innerHTML = ++totalLikes; //modify total likes by adding 1
-    }
+        .querySelector(".portfolio-likes");
+        numberOfLikes.innerHTML = parseInt(numberOfLikes.innerHTML) +1;
+        document.getElementById("total-likes").innerHTML = ++totalLikes; //modify total likes by adding 1
+    }));
+}
+
+//ajout un event listener sur les boutons
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//     
+function sorted(filter, btnFiltre) {
+    const byPupularite = document.querySelector('#popularity');
+    const byDate = document.querySelector('#date');
+    const byTitle = document.querySelector('#title');
+    // const btnFiltre = document.querySelector('.sorting_menu_list_choice')
+    // let count = 0;
     
-
-// //ajout un event listener sur les boutons
-
-
-// const byPupularite = document.querySelector('#popularity');
-// const byDate = document.querySelector('#date');
-// const byTitle = document.querySelector('#title');
-// const btnFiltre = document.querySelector('.sorting_menu_list_choice')
-// let count = 0;
-// // function sorted(filter, btnFiltre) {
-// //    btnFiltre.addEventListener("click", () => {
-// //         document.querySelector("#photographer-media").innerHTML = ""; // Vider le contenu du #portfolio
-// //         // if (filter === "likes") {
-// //         //   data.media.sort((a, b) => (a.likes > b.likes ? -1 : 1));
-// //         // }
-// //         // if (filter === "title") {
-// //         //   data.media.sort();
-// //         // }
-// //         // if (filter === "date") {
-// //         //     data.media.sort((a, b) => (a.date > b.date ? 1 : -1));
-// //         // }
-
-// // }
-// // }
+        btnFiltre.addEventListener("click", () => {
+            document.querySelector("#photographer-media").innerHTML = ""; // Vider le contenu du #portfolio
+            if (filter === "likes") {
+              media.sort((a, b) => (a.likes > b.likes ? -1 : 1));
+            }
+            if (filter === "title") {
+              media.sort();
+            }
+            if (filter === "date") {
+              media.sort((a, b) => (a.date > b.date ? 1 : -1));
+            }
+    });
+    
    
+   console.log(filter);
 
+//  Récupérer la tri et le sort du tableau data.media
+ document.querySelector("#photographer-media").appendChild(showPhotographerMedia(media))
+        sorted("likes", byPupularite);
+        sorted("title", byTitle);
+        sorted("date", byDate); 
+};
 
 
    

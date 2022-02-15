@@ -8,7 +8,7 @@ class ImageFactory {
                         </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>
-                            <button class="likes">${ medium.likes } <i class="fas fa-heart btn-like"></i></button>
+                            <button class="likes"><span class="portfolio-likes">${medium.likes} </span><i class="fas fa-heart btn-like"></i></button>
                         </figcaption>
                     </figure>
                 </li>
@@ -27,7 +27,7 @@ class VideoFactory {
                           </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>
-                            <button class="likes">${ medium.likes } <i  class="fas fa-heart btn_like"></i></button>
+                            <button class="likes"> <span class="portfolio-likes">${medium.likes} </span> <i  class="fas fa-heart .btn-like"></i></button>
                         </figcaption>
                     </figure>
                 </li>
