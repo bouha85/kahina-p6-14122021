@@ -12,40 +12,41 @@ window.onload = () => {
             e.preventDefault();
             //on ajoute l'image du lien cliqué dans la modale
             const image = lightbox.querySelector('.lightbox-container img');
-            image.src= this.href;
+            image.src = this.href;
             //on affiche la lightbox
             lightbox.classList.add("show");
         })
     }
+    //clique sur le button suivant
+
 
     //on active le button close
     close.addEventListener("click", function(){
         lightbox.classList.remove("show");
     })
 }
-const images = document.querySelectorAll(".portfolio-pics a");;
-console.log(images);
-// const photographerMediaTag = document.getElementById('photographer-media')
-const next = document.getElementById("#next");
-const prev = document.getElementById("#prev");
-
-
-
-
-
-let imageActive = 0;
-console.log(photographerMediaTag);
-photographerMediaTag[imageActive].classList.add('show');
-
-
-//  clique sur le button suivant
-next.addEventListener("click", function() {
-    photographerMediaTag[imageActive].classList.remove('show');
-    photographerMediaTag[imageActive].classList.add('hidden');
-    imageActive +=1;
-    if (imageActive >= photographerMediaTag.length){
+console.log(links)
+    let imageActive = 0;
+    const next = document.getElementById("#next");
+    next.addEventListener("click", () => {
+    links[imageActive].classList.remove('show');
+    links[imageActive].classList.add('hidden');
+    imageActive ++;
+    if (imageActive >= links.length){
         imageActive = 0;
     }
     photographerMediaTag[imageActive].classList.remove('hidden');
     photographerMediaTag[imageActive].classList.add('show');
 })
+
+
+
+
+
+
+
+
+
+
+    
+
