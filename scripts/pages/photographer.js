@@ -21,11 +21,7 @@ fetch('././data/photographers.json')
         showPhotographerMedia(media);
         showPricePhotographer(photographer);
         showTotalLikes(media);
-        // showFilter(filter, media)
-        sorted(filter, btnFiltre)
-        
-
-        
+        sorted(media)
     })
     .catch(error => console.log(error));
 
@@ -43,10 +39,14 @@ fetch('././data/photographers.json')
     };
 
     function showPhotographerMedia(media){
+        photographerMediaTag.innerHTML = ``
         media.forEach(medium => MediaFactory.render(photographerMediaTag, medium));
     };
      
-  
+    const triSelect = document.getElementById('trie')
+    triSelect.addEventListener('change', function(e) {
+    console.log(triSelect.value);
+    });
 
     function showHeaderModal(photographer){
         headerModal.innerHTML += `<h2>Contactez-moi <br> ${photographer.name} </h2>
@@ -83,42 +83,35 @@ function showTotalLikes(media) {
 
 //ajout un event listener sur les boutons
 
+function sorted(photographeMedia) {
+    const triSelect = document.getElementById('trie');
 
+    triSelect.addEventListener('change', function(e) {
+        const value = triSelect.value;
 
-function sorted(filter, btnFiltre) {
-    const byPupularite = document.querySelector('#popularity');
-    const byDate = document.querySelector('#date');
-    const byTitle = document.querySelector('#title');
-    // const btnFiltre = document.querySelector('.sorting_menu_list_choice')
-    // let count = 0;
-    
-        btnFiltre.addEventListener("click", () => {
-            document.querySelector("#photographer-media").innerHTML = ""; // Vider le contenu du #portfolio
-            if (filter === "likes") {
-              media.sort((a, b) => (a.likes > b.likes ? -1 : 1));
-            }
-            if (filter === "title") {
-              media.sort();
-            }
-            if (filter === "date") {
-              media.sort((a, b) => (a.date > b.date ? 1 : -1));
-            }
-    });
-    
-   
-   console.log(filter);
+        if (value == "popularity") {
+            const sortedMedia = photographeMedia.sort((a, b) => b.likes - a.likes)
+            showPhotographerMedia(sortedMedia);
+            console.log(sortedMedia);
+        }
 
-//  Récupérer la tri et le sort du tableau data.media
- document.querySelector("#photographer-media").appendChild(showPhotographerMedia(media))
-        sorted("likes", byPupularite);
-        sorted("title", byTitle);
-        sorted("date", byDate); 
+        if (value == "date") {
+            const sortedMedia = photographeMedia.sort((a, b) => new Date(b.date) - new Date(a.date))
+            showPhotographerMedia(sortedMedia);
+            console.log(sortedMedia);
+        }
+
+        if (value == "title") {
+            const sortedMedia = photographeMedia.sort((a, b) => {
+                if (a.title < b.title) { return -1; }
+                if (a.title > b.title) { return 1; }
+                return 0;
+            })
+            console.log(sortedMedia);
+            showPhotographerMedia(sortedMedia);
+        }
+    })
 };
-
-
-   
-
-    
 
 
 

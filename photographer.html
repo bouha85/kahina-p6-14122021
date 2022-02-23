@@ -21,6 +21,17 @@
         </section>
         <!--le filtre  -->
         <section class="sorting" aria-label="Tri de la galerie">
+            <label for="sorting_input">Trier par</label>
+            <div class="sorting_wrapper">
+                <select name="trie" id="trie" class="sorting_button" style="color: white;">
+                <option value="popularity" selected class="sorting_menu_list">Popularité</option>
+                <option value="date">Date</option>
+                <option value="title">Titre</option>
+              </select>
+            </div>
+
+        </section>
+        <!-- <section class="sorting" aria-label="Tri de la galerie">
           <label for="sorting_input">Trier par</label>
           <div class="sorting_wrapper">
               <input type="checkbox" id="sorting_input" class="sorting_input" aria-label="Choix de l'option de tri" />
@@ -37,7 +48,7 @@
               </div>
           </div>
   
-      </section>   
+      </section>    -->
         
 
         <!-- Média du photographe -->
@@ -94,9 +105,11 @@
             <button id="next" class="fas fa-chevron-right"></button>
         </div>
         <div class="lightbox-container">
-            <div class="lightbox-image" aria-label="Image ou vidéo"></div>
-                <h2 class="lightbox-text" aria-label="Titre de l'image ou de la vidéo"></h2>
-            </div>
+
+            <img class="lightbox-img"src="" alt="">
+                
+            <div class="lightbox-text" aria-label="Titre de l'image ou de la vidéo"></div>
+            
         </div>
         
         </div>
