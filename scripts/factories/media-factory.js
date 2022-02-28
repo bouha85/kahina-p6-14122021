@@ -3,8 +3,8 @@ class ImageFactory {
         tag.innerHTML += `
               <li class="portfolio-pics">
                     <figure>
-                        <a class="images" href="Sample_Photos/${medium.image}">
-                            <img src="Sample_Photos/${medium.image}" alt="${ medium.title }">
+                        <a class="images" href="">
+                            <img src="Sample_Photos/${medium.image}" alt="${ medium.title }" class="photographer-media" onclick="displayLightbox(event)">
                         </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>
@@ -22,8 +22,8 @@ class VideoFactory {
         tag.innerHTML += `
               <li class="portfolio-pics">
                     <figure>
-                        <a class="video" href="Sample_Photos/${medium.video}">
-                          <video src="Sample_Photos/${medium.video}" controls></video>
+                        <a class="video" href=">
+                          <video src="Sample_Photos/${medium.video}" controls  class="photographer-media" onclick="displayLightbox(event)"></video>
                           </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>

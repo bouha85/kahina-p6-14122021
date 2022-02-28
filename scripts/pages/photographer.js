@@ -114,5 +114,66 @@ function sorted(photographeMedia) {
 };
 
 
+function displayLightbox(event) {
+    const photograperMediaTag = document.querySelectorAll('.photographer-media')
+    const mediaURLArray = Array.from(photograperMediaTag).map(media => media.src)
+    let source = event.target.src
 
+    const lightboxModal = document.getElementById("lightbox_modal");
+    const closeLightbox = document.getElementById("close_lightbox");
+    const containerImg = document.getElementById('lightbox_img_container')
+    const btnPrev = document.querySelector('.lightbox_prev');
+    const btnNext = document.querySelector('.lightbox_next');
+    const lightboxImg = document.createElement('img');
+    const photographerMediaTag = document.querySelectorAll('.photographer-media');
+    const lightboxTitle = document.querySelector('.lightbox_title_container');
 
+    let mediaIdx = mediaURLArray.indexOf(source)
+    let currentSlideIndex = mediaIdx;
+
+    photographerMediaTag.forEach(image => {
+        image.addEventListener('click', function(e) {
+            lightboxModal.style.display = 'block'
+            lightboxImg.id = "lightbox-img"
+            lightboxImg.src = e.currentTarget.src;
+            lightboxImg.alt = e.currentTarget.alt
+            containerImg.innerHTML = ""
+            containerImg.appendChild(lightboxImg);
+            lightboxTitle.innerHTML=""
+
+        })
+    })
+
+    btnNext.addEventListener('click', function() {
+        currentSlideIndex++;
+
+        if (currentSlideIndex > mediaURLArray.length) {
+            currentSlideIndex = 0
+        }
+        lightboxImg.src = mediaURLArray[currentSlideIndex];
+    })
+
+    btnPrev.addEventListener('click', function() {
+        currentSlideIndex--;
+        console.log(currentSlideIndex);
+
+        if (currentSlideIndex < 0) {
+            currentSlideIndex = mediaURLArray.length - 1
+        }
+        let media = mediaURLArray[currentSlideIndex]
+        if (media.split('.').pop() == 'mp4') {
+            containerImg.innerHTML = `
+              <video controls>
+                    <source src="${media}" class="photographer-media">
+                </video>
+            `
+        } else {
+            containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
+        }
+    })
+
+    closeLightbox.addEventListener('click', function() {
+        lightboxModal.style.display = 'none'
+        containerImg.innerHTML = ""
+    })
+}

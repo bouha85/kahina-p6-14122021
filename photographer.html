@@ -31,24 +31,8 @@
             </div>
 
         </section>
-        <!-- <section class="sorting" aria-label="Tri de la galerie">
-          <label for="sorting_input">Trier par</label>
-          <div class="sorting_wrapper">
-              <input type="checkbox" id="sorting_input" class="sorting_input" aria-label="Choix de l'option de tri" />
-              <label for="sorting_input" class="sorting_button">
-                  <span class="sorting_button_text">Popularité</span>
-                  <span class="sorting_button_icon"></span>
-              </label>
-              <div class="sorting_menu" role="listbox" aria-expanded="false">
-                  <ul class="sorting_menu_list">
-                      <li><a class="sorting_menu_list_choice" id="popularity" role="option">Popularité</a></li>
-                      <li><a class="sorting_menu_list_choice" id="date" role="option">Date</a></li>
-                      <li><a class="sorting_menu_list_choice" id="title" role="option">Titre</a></li>
-                  </ul>
-              </div>
-          </div>
-  
-      </section>    -->
+        
+      </section>    
         
 
         <!-- Média du photographe -->
@@ -95,30 +79,27 @@
             </form>
         </div>
     </div>
-    <!-- Modal lightbox média -->
-    <div class="lightbox_background">
-    <div class="lightbox" id="lightbox">
-        <img class="lightbox-close" src="assets/icons/close.svg" onclick="closeModal()" />
-
-        <div class="nav-arrow">
-            <button id="prev" class="fas fa-chevron-left"></button>
-            <button id="next" class="fas fa-chevron-right"></button>
-        </div>
-        <div class="lightbox-container">
-
-            <img class="lightbox-img"src="" alt="">
-                
-            <div class="lightbox-text" aria-label="Titre de l'image ou de la vidéo"></div>
-            
-        </div>
-        
+     <!-- Modal lightbox média -->
+     <div id="lightbox_modal">
+        <div class="lightbox_container">
+            <header>
+                <img src="assets/icons/close.svg" id="close_lightbox" aria-label="image closeup view" />
+            </header>
+            <div id="lightbox_nav">
+                <button class="lightbox_prev fas fa-chevron-left"></button>
+                <button class="lightbox_next fas fa-chevron-right"></button>
+            </div>
+            <div id="lightbox_img_container">
+                <h3 class="lightbox_title_container"></h3>
+            </div>
         </div>
     </div>
+        
     <script src="scripts/factories/media-factory.js"></script>
     <script src="scripts/pages/photographer.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>  
    
-    <script src="scripts/utils/lightbox.js"></script>
+   
 
 </body>
 
