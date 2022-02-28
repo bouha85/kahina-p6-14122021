@@ -38,10 +38,11 @@ fetch('././data/photographers.json')
              `
     };
 
-    function showPhotographerMedia(media){
+    function showPhotographerMedia(media) {
         photographerMediaTag.innerHTML = ``
         media.forEach(medium => MediaFactory.render(photographerMediaTag, medium));
     };
+    
      
     const triSelect = document.getElementById('trie')
     triSelect.addEventListener('change', function(e) {
