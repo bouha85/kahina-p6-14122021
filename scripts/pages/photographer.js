@@ -139,7 +139,7 @@ function displayLightbox(event) {
         if (e.key == 'ArrowLeft') {
             showPreviousMedia();
         }
-    });
+      });
 
     photographerMediaTag.forEach(image => {
         image.addEventListener('click', function(e) {
@@ -151,27 +151,28 @@ function displayLightbox(event) {
             containerImg.appendChild(lightboxImg);
         })
     })
-
-    btnNext.addEventListener('click', function() {
+    
+    function showNextMedia(){
         currentSlideIndex++;
+    
+            if (currentSlideIndex > mediaURLArray.length) {
+                currentSlideIndex = 0
+            }
+            let media = mediaURLArray[currentSlideIndex]
+            if (media.split('.').pop() == 'mp4') {
+                containerImg.innerHTML = `
+                  <video controls>
+                        <source src="${media}" class="photographer-media">
+                    </video>
+                `
+            } else {
+                containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
+            }
+            lightboxTitle.innerText = getMediaName(media);
+    
+    }
 
-        if (currentSlideIndex > mediaURLArray.length) {
-            currentSlideIndex = 0
-        }
-        let media = mediaURLArray[currentSlideIndex]
-        if (media.split('.').pop() == 'mp4') {
-            containerImg.innerHTML = `
-              <video controls>
-                    <source src="${media}" class="photographer-media">
-                </video>
-            `
-        } else {
-            containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
-        }
-        lightboxTitle.innerText = getMediaName(media);
-    })
-
-    btnPrev.addEventListener('click', function() {
+    function showPreviousMedia() {
         currentSlideIndex--;
         console.log(currentSlideIndex);
 
@@ -189,7 +190,10 @@ function displayLightbox(event) {
             containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
         }
         lightboxTitle.innerText = getMediaName(media);
-    });
+    }
+    
+    
+    
 
     btnPrev.addEventListener('click', function() {
         showPreviousMedia();
