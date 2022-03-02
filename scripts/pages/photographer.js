@@ -132,6 +132,15 @@ function displayLightbox(event) {
     let mediaIdx = mediaURLArray.indexOf(source)
     let currentSlideIndex = mediaIdx;
 
+    window.addEventListener('keydown', function(e) {
+        if (e.key == 'ArrowRight') {
+            showNextMedia();
+        }
+        if (e.key == 'ArrowLeft') {
+            showPreviousMedia();
+        }
+    });
+
     photographerMediaTag.forEach(image => {
         image.addEventListener('click', function(e) {
             lightboxModal.style.display = 'block'
@@ -140,8 +149,6 @@ function displayLightbox(event) {
             lightboxImg.alt = e.currentTarget.alt
             containerImg.innerHTML = ""
             containerImg.appendChild(lightboxImg);
-            lightboxTitle.innerHTML=""
-
         })
     })
 
@@ -151,7 +158,17 @@ function displayLightbox(event) {
         if (currentSlideIndex > mediaURLArray.length) {
             currentSlideIndex = 0
         }
-        lightboxImg.src = mediaURLArray[currentSlideIndex];
+        let media = mediaURLArray[currentSlideIndex]
+        if (media.split('.').pop() == 'mp4') {
+            containerImg.innerHTML = `
+              <video controls>
+                    <source src="${media}" class="photographer-media">
+                </video>
+            `
+        } else {
+            containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
+        }
+        lightboxTitle.innerText = getMediaName(media);
     })
 
     btnPrev.addEventListener('click', function() {
@@ -171,10 +188,24 @@ function displayLightbox(event) {
         } else {
             containerImg.innerHTML = `<img id="lightbox-img" src="${media}">`
         }
+        lightboxTitle.innerText = getMediaName(media);
+    });
+
+    btnPrev.addEventListener('click', function() {
+        showPreviousMedia();
+    })
+
+    btnNext.addEventListener('click', function() {
+        showNextMedia();
     })
 
     closeLightbox.addEventListener('click', function() {
         lightboxModal.style.display = 'none'
         containerImg.innerHTML = ""
     })
+}
+
+function getMediaName(url) {
+    let fileName = url.split('/').pop().split('.')[0].split('_').join('-');
+    return fileName;
 }
