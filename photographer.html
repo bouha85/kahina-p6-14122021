@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -32,7 +32,7 @@
 
         </section>
         
-      </section>    
+        
         
 
         <!-- Média du photographe -->
@@ -50,14 +50,12 @@
                 <!-- <img src="assets/icons/close.svg" onclick="closeModal()" /> -->
             </header>
 
-            <form  id="contactForm"
-            name="contact"
-            action="index.html"
-            method="get">
-            <div id="divPrenom">  </div>
-                    <label for="prénom">Prénom</label>
-                    <input type="text" name="prénom" id="prenom" aria-label="Renseignez votre prénom" aria-describedby="prénom" minlength="2" aria-required="true" required>
+            <form  id="contactForm" name="contact" action="index.html" method="get">
+            <div id="divPrenom">  
+                    <label for="prenom">Prénom</label>
+                    <input type="text" name="prenom" id="prenom" aria-label="Renseignez votre prénom" aria-describedby="prenom" minlength="2" aria-required="true" required>
                     <span id="spanPrenom"></span>
+                  </div>
                     <div id="divnom">         
                     <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" aria-label="Renseignez votre nom" aria-describedby="nom" minlength="2" aria-required="true" required>
@@ -74,7 +72,7 @@
                     <span id="spanMsg"></span>
                   </div>       
                     <button class="contact_button" id="btn-submit">Envoyer</button>
-                </div>
+            
                 
             </form>
         </div>
@@ -83,7 +81,7 @@
      <div id="lightbox_modal">
         <div class="lightbox_container">
             <header>
-                <img src="assets/icons/close.svg" id="close_lightbox" aria-label="image closeup view" />
+                <img src="assets/icons/close.svg" id="close_lightbox" alt="fermer" />
             </header>
             <div id="lightbox_nav">
                 <button class="lightbox_prev fas fa-chevron-left"></button>
