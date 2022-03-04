@@ -1,3 +1,5 @@
+// import {MediaFactory} from "../media-factory.js"
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographerId = urlParams.get('photographerId');
@@ -55,9 +57,9 @@ fetch('././data/photographers.json')
     }
 
     function showPricePhotographer(photographer){
-        badge.innerHTML += `<span id="total-likes" aria-label="Total image likes">
+        badge.innerHTML += `<span id="total-likes" aria-label="Nombre total de likes du photographe">
         </span
-     ><i class="fas fa-heart healtTotal"></i> <span id="prix" aria-label="Photographer daily price"></span>${photographer.price} €/jour`
+     ><i class="fas fa-heart healtTotal"></i> <span id="prix" aria-label="Prix journalier du photographe"></span>${photographer.price} €/jour`
     }
     
 

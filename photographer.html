@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -21,7 +21,7 @@
         </section>
         <!--le filtre  -->
         <section class="sorting" aria-label="Tri de la galerie">
-            <label for="sorting_input">Trier par</label>
+            <label for="sorting_wrapper">Trier par</label>
             <div class="sorting_wrapper">
                 <select name="trie" id="trie" class="sorting_button" style="color: white;">
                 <option value="popularity" selected class="sorting_menu_list">Popularité</option>
@@ -38,10 +38,9 @@
         <!-- Média du photographe -->
         <section id="media">
             <ul id="photographer-media"></ul>
-            <footer class="badge">
-            </footer>
+            
         </section>
-    </main>
+   
     <!-- Modal contact -->
     <div id="contact_modal">
         <div class="modal"  id="formValid">
@@ -93,6 +92,9 @@
             <h3 id="media-title" class="lightbox_title_container"></h3>
         </div>
     </div>
+</main>
+    <footer class="badge">
+    </footer>
         
     <script src="scripts/factories/media-factory.js"></script>
     <script src="scripts/pages/photographer.js"></script>

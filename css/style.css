@@ -67,12 +67,8 @@ h1 {
 }
 .city_country{
     color: #901C1C;
-    font-size: 11px;
 }
-.tagline{
-    font-size: 9px;
-}
+
 .price{
-    font-size: 8px;
-    color: grey;
+    color: #757575;
 }
