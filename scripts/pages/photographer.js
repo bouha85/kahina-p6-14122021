@@ -1,15 +1,9 @@
-// import {MediaFactory} from "../media-factory.js"
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const photographerId = urlParams.get('photographerId');
-console.log(photographerId);
 const photographerMediaTag = document.getElementById('photographer-media');
-console.log(photographerMediaTag);
 const getPhotographerBio = document.getElementById('photograph-header');
-console.log(getPhotographerBio);
 const headerModal = document.querySelector('.modal header');
-console.log(headerModal);
 const badge = document.querySelector('.badge');
 
 
@@ -48,7 +42,7 @@ fetch('././data/photographers.json')
      
     const triSelect = document.getElementById('trie')
     triSelect.addEventListener('change', function(e) {
-    console.log(triSelect.value);
+    // console.log(triSelect.value);
     });
 
     function showHeaderModal(photographer){
@@ -65,14 +59,14 @@ fetch('././data/photographers.json')
 
 function showTotalLikes(media) {
     //addEvent pour likes
-    console.log(media);
+    
     let counterPlus = document.querySelectorAll('.btn-like');
-    console.log(counterPlus);
+   
     //add likes and display total on sorted images
     let totalLikes = media
         .map((m) => m.likes)
         .reduce((total, value) => total + value);
-    console.log(totalLikes);
+   
     document.getElementById("total-likes").innerHTML = totalLikes;
 
     counterPlus.forEach((btn) => btn.addEventListener("click", function(e) {
@@ -95,13 +89,13 @@ function sorted(photographeMedia) {
         if (value == "popularity") {
             const sortedMedia = photographeMedia.sort((a, b) => b.likes - a.likes)
             showPhotographerMedia(sortedMedia);
-            console.log(sortedMedia);
+            // console.log(sortedMedia);
         }
 
         if (value == "date") {
             const sortedMedia = photographeMedia.sort((a, b) => new Date(b.date) - new Date(a.date))
             showPhotographerMedia(sortedMedia);
-            console.log(sortedMedia);
+            // console.log(sortedMedia);
         }
 
         if (value == "title") {
@@ -110,7 +104,7 @@ function sorted(photographeMedia) {
                 if (a.title > b.title) { return 1; }
                 return 0;
             })
-            console.log(sortedMedia);
+            // console.log(sortedMedia);
             showPhotographerMedia(sortedMedia);
         }
     })
@@ -161,6 +155,7 @@ function displayLightbox(event) {
                 currentSlideIndex = 0
             }
             let media = mediaURLArray[currentSlideIndex]
+            if (media == undefined) { return }
             if (media.split('.').pop() == 'mp4') {
                 containerImg.innerHTML = `
                   <video controls>
@@ -176,12 +171,13 @@ function displayLightbox(event) {
 
     function showPreviousMedia() {
         currentSlideIndex--;
-        console.log(currentSlideIndex);
+        // console.log(currentSlideIndex);
 
         if (currentSlideIndex < 0) {
             currentSlideIndex = mediaURLArray.length - 1
         }
         let media = mediaURLArray[currentSlideIndex]
+        if (media == undefined) { return }
         if (media.split('.').pop() == 'mp4') {
             containerImg.innerHTML = `
               <video controls>

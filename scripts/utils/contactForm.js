@@ -64,6 +64,7 @@ btnSubmit.addEventListener('click', function (e) {
     msgValidation.innerHTML = 'Votre message à bien été reçu';
     msgValidation.style.color = '#fff';
     msgValidation.style.fontSize = '3em';
+    console.log({ prenom: prenom.value, nom: nom.value, email: email.value, message: message.value });
   }
 });
 
