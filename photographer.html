@@ -4,24 +4,29 @@
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
+    <meta
+      name="description"
+      content="FishEye Site web de photographes freelances, accessibles aux utilisateurs malvoyants "
+    />
+    <meta name="author" content="Kahina Ramdane"/>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/de9f2e76d7.js" crossorigin="anonymous"></script>
-    <title>Fisheye - photographe </title>
+    <title>FishEye</title>
 </head>
 
 <body>
     <header>
-        <a href="./index.html"><img src="assets/images/logo.png" class="logo" alt="Fisheye home page" /></a>
+        <a href="./index.html"><img src="assets/images/logo.png" class="logo" alt="Logo de Fisheye Page d'accueil" /></a>
     </header>
     <main id="main">
         <!-- Info du photographe -->
-        <section id="photograph-header">
+        <section id="photograph-header" aria-label="biographie du photographe">
            
         </section>
         <!--le filtre  -->
         <section class="sorting" aria-label="Tri de la galerie">
-            <label for="sorting_wrapper">Trier par</label>
+            <label for="trie">Trier par</label>
             <div class="sorting_wrapper">
                 <select name="trie" id="trie" class="sorting_button" style="color: white;">
                 <option value="popularity" selected class="sorting_menu_list">Popularité</option>
@@ -83,13 +88,13 @@
                 <img src="assets/icons/close.svg" id="close_lightbox" alt="fermer" />
             </header>
             <div id="lightbox_nav">
-                <button class="lightbox_prev fas fa-chevron-left"></button>
-                <button class="lightbox_next fas fa-chevron-right"></button>
+                <button class="lightbox_prev fas fa-chevron-left" aria-label="image precidente"></button>
+                <button class="lightbox_next fas fa-chevron-right" aria-label="image suivante"></button>
             </div>
             <div id="lightbox_img_container">
                 
             </div>
-            <h3 id="media-title" class="lightbox_title_container"></h3>
+            <h3 id="media-title" class="lightbox_title_container" aria-label="titre de l'image"></h3>
         </div>
     </div>
 </main>

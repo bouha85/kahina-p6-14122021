@@ -1,7 +1,7 @@
 body {
     position: relative;
 }
-i{
+button{
     cursor: pointer;
 }
 
@@ -30,11 +30,14 @@ i{
     align-items: center;
     
 }
-#photograph-header h2{
+#photograph-header h1{
     color: #D3573C;
     font-size: 36px;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+#photograph-info  {
+  text-align: start;
 }
 .contact_button {
     font-size: 20px;
@@ -173,42 +176,21 @@ span {
     align-items: center;
     position: relative;
   }
-  /* .sorting_button_text {
-    padding: 0px 5px;
-    color: #FFFFFF;
-  } */
+  
   .sorting_button_icon {
     position: relative;
     width: 40px;
     height: 40px;
     cursor: pointer;
   }
-  /* .sorting_button_icon:before, .sorting_button_icon:after {
-    width: 3px;
-    height: 10px;
-    border-radius: 1px;
-    background: #FFFFFF;
-    content: " ";
-    position: absolute;
-    top: 15px;
-    left: 30px;
-    z-index: 1;
-  } */
+  
   .sorting_button_icon:before {
     transform: translate(-5px, 0) rotate(-45deg);
   }
   .sorting_button_icon:after {
     transform: translate(0, 0) rotate(45deg);
   }
-  /* .sorting_menu {
-    width: 160px;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 5px;
-  } */
+  
   .sorting_menu_list {
     width: 140px;
     margin: 0px;
@@ -218,12 +200,7 @@ span {
     list-style: none;
     transition: all 100ms ease-in-out;
   }
-  /* .sorting_menu li {
-    display: flex;
-    align-items: center;
-    width: inherit;
-    padding: 0;
-  } */
+  
   .sorting_menu li > a {
     display: flex;
     align-items: center;
@@ -237,9 +214,6 @@ span {
   .sorting_menu li:not(:last-child) {
     border-bottom: 1px solid #FFFFFF;
   }
-  /* .sorting_menu li > a:hover {
-    background: #D3573C;
-  } */
   
   .sorting_input:checked ~ .sorting_menu {
     z-index: 1;

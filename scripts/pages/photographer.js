@@ -25,7 +25,7 @@ fetch('././data/photographers.json')
     function showPhotographerDetails(photographer){
         getPhotographerBio.innerHTML +=  
             ` <div id="photograph-info">
-                        <h2>${photographer.name}</h2>
+                        <h1>${photographer.name}</h1>
                       <P class="city_country">${photographer.city}, ${photographer.country}</P>
                       <p>${photographer.tagline}</p>
                       </div>
