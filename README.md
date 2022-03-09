@@ -27,8 +27,7 @@ Les normes suivantes sont à respecter :
 ## Livrables
 
 Pour ce projet, les livrables à fournir sont :
-- Un dépôt de code sur GitHub avec des fichiers HTML, CSS et JavaScript,
-- Une version mise à jour du JSON (avec alt-text).
+- Un dépôt de code sur GitHub avec des fichiers HTML, CSS et JavaScript
 
 ***
 ## Compétences évaluées
