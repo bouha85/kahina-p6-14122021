@@ -4,7 +4,7 @@ class ImageFactory {
               <li class="portfolio-pics">
                     <figure>
                         <a class="images" href="#">
-                            <img src="Sample_Photos/${medium.image}" alt="${ medium.title }" class="photographer-media" onclick="displayLightbox(event)">
+                            <img src="Sample_Photos/${medium.image}" alt="Portrait de ${ medium.title }" class="photographer-media" onclick="displayLightbox(event)">
                         </a>
                         <figcaption>
                             <h4>${ medium.title }</h4>

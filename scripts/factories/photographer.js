@@ -2,7 +2,7 @@ function photographerFactory(data) {
     const { id, name, city, country, tagline, price, portrait,likes } = data;
 
     const picture = `Sample_Photos/Photographers ID photos/${portrait}`;
-    console.log(picture);
+    // console.log(picture);
 
     function getUserCardDOM() {
         const article = document.createElement('article');
@@ -10,7 +10,7 @@ function photographerFactory(data) {
         a.setAttribute("href", `photographer.html?photographerId=${id}`);
         const img = document.createElement('img');
         img.setAttribute("src", picture);
-        img.setAttribute("alt", name)
+        img.setAttribute("alt", `Photo de profil de ${name}`)
         const h2 = document.createElement('h2');
         h2.textContent = name;
         const p1 = document.createElement('p');
