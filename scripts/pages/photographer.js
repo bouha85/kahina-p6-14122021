@@ -89,12 +89,14 @@ function sorted(photographeMedia) {
         if (value == "popularity") {
             const sortedMedia = photographeMedia.sort((a, b) => b.likes - a.likes)
             showPhotographerMedia(sortedMedia);
+            
             // console.log(sortedMedia);
         }
 
         if (value == "date") {
             const sortedMedia = photographeMedia.sort((a, b) => new Date(b.date) - new Date(a.date))
             showPhotographerMedia(sortedMedia);
+            
             // console.log(sortedMedia);
         }
 
@@ -106,6 +108,7 @@ function sorted(photographeMedia) {
             })
             // console.log(sortedMedia);
             showPhotographerMedia(sortedMedia);
+            
         }
     })
 };
